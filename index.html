@@ -22,16 +22,10 @@ html,body{
   padding:18px;
 }
 
-.wrap{
-  width:min(420px, 92vw);
-}
+.wrap{ width:min(420px, 92vw); }
 
 /* interaction sans JS */
-#toggle{
-  position:absolute;
-  opacity:0;
-  pointer-events:none;
-}
+#toggle{ position:absolute; opacity:0; pointer-events:none; }
 
 .card{
   position:relative;
@@ -75,6 +69,10 @@ html,body{
   opacity:0;
   pointer-events:none;
   transition:opacity .4s ease .2s;
+
+  /* IMPORTANT: scroll si texte long */
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .name{
@@ -87,12 +85,7 @@ html,body{
   color:transparent;
 }
 
-.line{
-  margin:6px 0;
-  font-size:16px;
-  line-height:1.45;
-  color:#111;
-}
+.line{ margin:6px 0; font-size:16px; line-height:1.45; color:#111; }
 
 .emdr{
   font-weight:900;
@@ -102,21 +95,11 @@ html,body{
   display:inline-block;
 }
 
-.small{
-  margin-top:10px;
-  font-size:13px;
-  opacity:.7;
-  color:#111;
-}
+.small{ margin-top:10px; font-size:13px; opacity:.7; color:#111; }
 
 /* état ouvert */
-#toggle:checked + label .front{
-  transform:rotateY(-160deg);
-}
-#toggle:checked + label .inside{
-  opacity:1;
-  pointer-events:auto;
-}
+#toggle:checked + label .front{ transform:rotateY(-160deg); }
+#toggle:checked + label .inside{ opacity:1; pointer-events:auto; }
 </style>
 </head>
 
@@ -125,35 +108,22 @@ html,body{
     <input id="toggle" type="checkbox">
     <label class="card" for="toggle">
 
-      <div class="front">
-        Ouvre-moi 💝
+      <div class="front">Ouvre-moi 💝</div>
+
+      <div class="inside">
+        <div class="name">Nathalie</div>
+
+        <div class="line">Prends ce temps pour toi,</div>
+        <div class="line">je t’offre <span class="emdr">un soin EMDR</span>.</div>
+
+        <div class="line">Tu as traversé beaucoup d’épreuves avec force et courage.</div>
+        <div class="line">Tu as pris soin de tout le monde… maintenant, c’est à ton tour.</div>
+
+        <div class="line">Tu mérites profondément ce moment pour toi 🤍</div>
+        <div class="line">Asma va te contacter sur WhatsApp sous peu.</div>
+
+        <div class="small">(retouche la carte pour refermer)</div>
       </div>
-<div class="inside">
-  <div class="name">Nathalie</div>
-
-  <div class="line">Prends ce temps pour toi,</div>
-  <div class="line">
-    je t’offre <span class="emdr">un soin EMDR</span>.
-  </div>
-
-  <div class="line">
-    Tu as traversé beaucoup d’épreuves avec force et courage.
-  </div>
-  <div class="line">
-    Tu as pris soin de tout le monde… maintenant, c’est à ton tour.
-  </div>
-
-  <div class="line">
-    Tu mérites profondément ce moment pour toi 🤍
-  </div>
-  <div class="line">
-    Asma va te contacter sur WhatsApp sous peu.
-  </div>
-
-  <div class="small">(retouche la carte pour refermer)</div>
-</div>
-
-.inside{ overflow:auto; -webkit-overflow-scrolling:touch; }
 
     </label>
   </div>
