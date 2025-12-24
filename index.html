@@ -6,6 +6,8 @@
 <title>Carte pour Nathalie</title>
 
 <style>
+*{box-sizing:border-box}
+
 html,body{
   margin:0;
   height:100%;
@@ -22,10 +24,16 @@ html,body{
   padding:18px;
 }
 
-.wrap{ width:min(420px, 92vw); }
+.wrap{
+  width:min(420px, 92vw);
+}
 
 /* interaction sans JS */
-#toggle{ position:absolute; opacity:0; pointer-events:none; }
+#toggle{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
 
 .card{
   position:relative;
@@ -37,6 +45,7 @@ html,body{
   -webkit-tap-highlight-color:transparent;
 }
 
+/* FACE AVANT */
 .front{
   position:absolute;
   inset:0;
@@ -55,6 +64,7 @@ html,body{
   backface-visibility:hidden;
 }
 
+/* INTERIEUR */
 .inside{
   position:absolute;
   inset:0;
@@ -69,6 +79,8 @@ html,body{
   opacity:0;
   pointer-events:none;
   transition:opacity .4s ease .2s;
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .name{
@@ -81,7 +93,12 @@ html,body{
   color:transparent;
 }
 
-.line{ margin:6px 0; font-size:16px; line-height:1.45; color:#111; }
+.line{
+  margin:6px 0;
+  font-size:16px;
+  line-height:1.45;
+  color:#111;
+}
 
 .emdr{
   font-weight:900;
@@ -91,19 +108,29 @@ html,body{
   display:inline-block;
 }
 
-.small{ margin-top:10px; font-size:13px; opacity:.7; color:#111; }
+.small{
+  margin-top:10px;
+  font-size:13px;
+  opacity:.7;
+  color:#111;
+}
 
-/* état ouvert */
-#toggle:checked + label .front{ transform:rotateY(-160deg); }
-#toggle:checked + label .inside{ opacity:1; pointer-events:auto; }
+/* OUVERTURE */
+#toggle:checked + label .front{
+  transform:rotateY(-160deg);
+}
+#toggle:checked + label .inside{
+  opacity:1;
+  pointer-events:auto;
+}
 </style>
 </head>
 
 <body>
   <div class="wrap">
     <input id="toggle" type="checkbox">
-    <label class="card" for="toggle">
 
+    <label class="card" for="toggle">
       <div class="front">Ouvre-moi 💝</div>
 
       <div class="inside">
@@ -120,7 +147,6 @@ html,body{
 
         <div class="small">(retouche la carte pour refermer)</div>
       </div>
-
     </label>
   </div>
 </body>
